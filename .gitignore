@@ -16,3 +16,4 @@ c_cpp_properties.json
 .vscode/settings.json
 .vscode/extensions.json
 sdk/lib/.vendor_sdk_registry_state.json
+settings.local.json
