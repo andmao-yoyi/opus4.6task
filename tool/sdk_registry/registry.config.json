@@ -1,0 +1,14 @@
+{
+    "api_v4_url": "",
+    "project_id": "",
+    "package_name": "vendor_sdk",
+    "manifest_file": "manifest.json",
+    "token": "",
+    "boards": [
+        "board6e_ecat_cfm",
+        "board6e_mc16",
+        "board6750_ecat",
+        "board6e_cfm",
+        "board6e_p02"
+    ]
+}

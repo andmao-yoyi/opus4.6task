@@ -1,0 +1,62 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "6750dap_debug",
+            "cwd": "${workspaceRoot}",
+            "executable": "${workspaceFolder}/build/output/demo.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "servertype": "openocd",
+            "gdbPath": "${env:GNURISCV_TOOLCHAIN_PATH}/bin/riscv32-unknown-elf-gdb",
+            "device": "HPM6750xVMx",
+            "svdFile": "${workspaceFolder}/sdk/soc/HPM6700/HPM6750/HPM6750_svd.svd",
+            "searchDir": [
+                "${workspaceFolder}/openocd"
+            ],
+            "configFiles": [
+                "${workspaceFolder}/openocd/cmsis_dap.cfg",
+                "${workspaceFolder}/openocd/hpm6750-single-core.cfg",
+                "${workspaceFolder}/openocd/hpm6750ecat.cfg"
+            ],
+            "interface": "jtag",
+            "runToEntryPoint": "main_task",
+            "showDevDebugOutput": "none",
+        },
+        {
+            "name": "6e00dap_debug",
+            "cwd": "${workspaceRoot}",
+            "executable": "${workspaceFolder}/build/output/demo.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "servertype": "openocd",
+            "gdbPath": "${env:GNURISCV_TOOLCHAIN_PATH}/bin/riscv32-unknown-elf-gdb",
+            "device": "HPM6E00xVMx",
+            "searchDir": [
+                "${workspaceFolder}/openocd"
+            ],
+            "configFiles": [
+                "${workspaceFolder}/openocd/cmsis_dap.cfg",
+                "${workspaceFolder}/openocd/hpm6e80-single-core.cfg",
+                "${workspaceFolder}/openocd/hpm6e00evk.cfg"
+            ],
+            "interface": "jtag",
+            "runToEntryPoint": "main_task",
+            "showDevDebugOutput": "none",
+        },
+        {
+            "cwd": "${workspaceFolder}",
+            "executable": "${workspaceFolder}/build/output/demo.elf",
+            "name": "jlink_debug",
+            "request": "launch",
+            "type": "cortex-debug",
+            "device": "HPM6750xVMx",
+            "runToEntryPoint": "main_task",
+            "showDevDebugOutput": "none",
+            "interface": "jtag",
+            "servertype": "jlink",
+            //"svdFile": "${workspaceFolder}/vendor_sdk/soc/HPM6700/HPM6750/HPM6750_svd.svd"
+        }
+        
+    ]
+}

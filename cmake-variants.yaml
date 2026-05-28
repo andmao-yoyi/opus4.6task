@@ -1,0 +1,42 @@
+buildType:
+  default: release
+  choices:
+    debug:
+      short: Debug
+      long: Debug build
+      settings:
+        CMAKE_BUILD_TYPE: Debug
+    release:
+      short: Release
+      long: Release build
+      settings:
+        CMAKE_BUILD_TYPE: Release
+
+board:
+  default: board6750_ecat
+  choices:
+    board6750_ecat:
+      short: BOARD6750_ECAT
+      long: libvendor_sdk_board6750_ecat.a
+      settings:
+        BOARD: board6750_ecat
+    board6e_ecat_cfm:
+      short: BOARD6E_ECAT_CFM
+      long: libvendor_sdk_board6e_ecat_cfm.a
+      settings:
+        BOARD: board6e_ecat_cfm
+    board6e_cfm:
+      short: BOARD6E_CFM
+      long: libvendor_sdk_board6e_cfm.a
+      settings:
+        BOARD: board6e_cfm
+    board6e_mc16:
+      short: BOARD6E_MC16
+      long: libvendor_sdk_board6e_mc16.a
+      settings:
+        BOARD: board6e_mc16
+    board6e_p02:
+      short: BOARD6E_P02
+      long: libvendor_sdk_board6e_p02.a
+      settings:
+        BOARD: board6e_p02
