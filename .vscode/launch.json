@@ -8,20 +8,27 @@
             "request": "launch",
             "type": "cortex-debug",
             "servertype": "openocd",
-            "gdbPath": "${env:GNURISCV_TOOLCHAIN_PATH}/bin/riscv32-unknown-elf-gdb",
-            "device": "HPM6750xVMx",
-            "svdFile": "${workspaceFolder}/sdk/soc/HPM6700/HPM6750/HPM6750_svd.svd",
+            "serverpath": "openocd",
+            "gdbPath": "${env:GNURISCV_TOOLCHAIN_PATH}/bin/riscv32-unknown-elf-gdb.exe",
+            "gdbTarget": "localhost:3333",
+            "device": "HPM6750",
             "searchDir": [
                 "${workspaceFolder}/openocd"
             ],
             "configFiles": [
-                "${workspaceFolder}/openocd/cmsis_dap.cfg",
-                "${workspaceFolder}/openocd/hpm6750-single-core.cfg",
-                "${workspaceFolder}/openocd/hpm6750ecat.cfg"
+                "cmsis_dap.cfg",
+                "hpm6750-single-core.cfg",
+                "hpm6750ecat.cfg"
             ],
             "interface": "jtag",
             "runToEntryPoint": "main_task",
-            "showDevDebugOutput": "none",
+            "showDevDebugOutput": "raw",
+            "postRestartCommands": [
+                "monitor reset halt",
+                "load",
+                "monitor reset init"
+            ],
+            "rtos": "FreeRTOS"
         },
         {
             "name": "6e00dap_debug",
@@ -30,20 +37,27 @@
             "request": "launch",
             "type": "cortex-debug",
             "servertype": "openocd",
-            "gdbPath": "${env:GNURISCV_TOOLCHAIN_PATH}/bin/riscv32-unknown-elf-gdb",
-            "device": "HPM6E00xVMx",
-            "svdFile": "${workspaceFolder}/sdk/soc/HPM6E00/HPM6E80/HPM6E80_svd.svd",
+            "serverpath": "openocd",
+            "gdbPath": "${env:GNURISCV_TOOLCHAIN_PATH}/bin/riscv32-unknown-elf-gdb.exe",
+            "gdbTarget": "localhost:3333",
+            "device": "HPM6E00",
             "searchDir": [
                 "${workspaceFolder}/openocd"
             ],
             "configFiles": [
-                "${workspaceFolder}/openocd/cmsis_dap.cfg",
-                "${workspaceFolder}/openocd/hpm6e80-single-core.cfg",
-                "${workspaceFolder}/openocd/hpm6e00evk.cfg"
+                "cmsis_dap.cfg",
+                "hpm6e80-single-core.cfg",
+                "hpm6e00evk.cfg"
             ],
             "interface": "jtag",
             "runToEntryPoint": "main_task",
-            "showDevDebugOutput": "none",
+            "showDevDebugOutput": "raw",
+            "postRestartCommands": [
+                "monitor reset halt",
+                "load",
+                "monitor reset init"
+            ],
+            "rtos": "FreeRTOS"
         },
         {
             "cwd": "${workspaceFolder}",
@@ -51,13 +65,14 @@
             "name": "jlink_debug",
             "request": "launch",
             "type": "cortex-debug",
-            "device": "HPM6750xVMx",
+            "device": "HPM6750",
             "runToEntryPoint": "main_task",
-            "showDevDebugOutput": "none",
+            "showDevDebugOutput": "raw",
             "interface": "jtag",
             "servertype": "jlink",
-            //"svdFile": "${workspaceFolder}/vendor_sdk/soc/HPM6700/HPM6750/HPM6750_svd.svd"
+            "gdbPath": "${env:GNURISCV_TOOLCHAIN_PATH}/bin/riscv32-unknown-elf-gdb.exe",
+            "gdbTarget": "localhost:2331",
+            "rtos": "FreeRTOS"
         }
-        
     ]
 }
