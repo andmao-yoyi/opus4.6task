@@ -32,6 +32,7 @@
             "servertype": "openocd",
             "gdbPath": "${env:GNURISCV_TOOLCHAIN_PATH}/bin/riscv32-unknown-elf-gdb",
             "device": "HPM6E00xVMx",
+            "svdFile": "${workspaceFolder}/sdk/soc/HPM6E00/HPM6E80/HPM6E80_svd.svd",
             "searchDir": [
                 "${workspaceFolder}/openocd"
             ],
